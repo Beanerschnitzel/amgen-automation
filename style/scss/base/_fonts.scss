@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@font-face {
+    font-family: 'GothamNarrow';
+    src: url('../../font/GothamNarrow-Medium.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamNarrow';
+    src: url('../../font/GothamNarrow-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamNarrowBook';
+    src: url('../../font/GothamNarrow-Book.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamBlack';
+    src: url('../../font/Gotham-Black.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GothamCondensed';
+    src: url('../../font/GothamCondensed-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GothamCondensed';
+    src: url('../../font/GothamCondensed-BoldItalic.woff') format('woff'); /* Pretty Modern Browsers */
+    font-weight: 700;
+    font-style: italic;
+}
+

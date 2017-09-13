@@ -1,0 +1,9 @@
+extends layouts/_layout
+
+block head  
+	//- put page specific stuff here
+	- var page = { home: "is-current", rasStory: "", firstLine: "", thirdLine: "", administration: "", patientProfiles: "", access: "", generic: "", paidHome: "" };
+		title Home
+
+block content
+	include includes/_contentHome.pug

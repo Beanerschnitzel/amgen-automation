@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footerMain {
+   position: relative;
+
+   margin-top: $spacer*2;
+   padding-bottom: $spacer*2;
+
+   font-size: $footerMain-size;
+
+   color: $footerMain-color;
+   background: $footerMain-background;
+}
+.footerMain-topLink {
+   display: block;
+
+   padding-top: $spacer/2;
+   padding-bottom: $spacer/2;
+   //position:absolute;
+   //bottom:100%;
+   //left:0;
+   //width:100%;
+   text-align: center;
+   text-decoration: none;
+   text-transform: uppercase;
+
+   color: $footerMain-topLink-color;
+   background: $footerMain-topLink-background;
+   &:hover {
+      text-decoration: none;
+
+      color: $footerMain-topLink-color;
+   }
+}
+.footerMain-main {
+   display: flex;
+
+   flex-direction: column;
+   justify-content: center;
+
+   margin-bottom: $spacer;
+   padding-top: $spacer*3;
+   @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+   }
+   @include media-breakpoint-up(lg) {
+      align-items: flex-end;
+
+      border-bottom: 2px solid $footerMain-main-border-color;
+   }
+}
+.footerMain-inner {
+   max-width: $maxWidth;
+   margin-right: auto;
+   margin-left: auto;
+   padding-right: 15px;
+   padding-left: 15px;
+}
+.footerMain-logo {
+   margin: 0 auto;
+   padding-right: $spacer;
+   //padding-top:$spacer*.75;
+   padding-bottom: $spacer*.75;
+   @include media-breakpoint-up(sm) {
+      margin: 0;
+      order: 2;
+   }
+   @include media-breakpoint-up(lg) {
+      flex: 0 1 auto;
+      max-width: 197px;
+      width: calc(100%);
+   }
+   .footerMain-logoLink {
+      display: flex;
+      max-width: 100%;
+      width: calc(100%);
+      align-items: flex-end;
+      img {
+         max-width: 100%;
+         width: calc(100%);
+      }
+   }
+}
+.footerMain-nav {
+   order: 2;
+
+   margin-bottom: 0;
+   padding: 0;
+
+   list-style: none;
+
+   font-size: $footerMain-nav-size;
+   @include media-breakpoint-up(sm) {
+      order: 1;
+   }
+   @include media-breakpoint-up(lg) {
+      display: flex;
+      flex: 1 0 auto;
+
+      flex-wrap: wrap;
+
+      // max-width: 600px;
+      margin-bottom: $spacer/2;
+   }
+}
+.footerMain-navItem {
+   //text-align:center;
+   display: flex;
+
+   flex: 1 1 auto;
+
+   font-size: 16px;
+   @include media-breakpoint-up(sm) {
+      font-size: 24px;
+   }
+   @include media-breakpoint-up(lg) {
+      // flex: 0;
+      &:first-child {
+         text-align: left;
+         .footerMain-navLink {
+            padding-left: 0;
+         }
+      }
+   }
+}
+.footerMain-navLink {
+   display: block;
+
+   flex: 0 1 auto;
+   //display:flex;
+   align-items: center;
+
+   padding: $spacer/4 $spacer;
+
+   text-decoration: none;
+
+   color: $footerMain-navLink-color;
+   &:hover {
+      text-decoration: none;
+
+      color: $footerMain-navUtilLink-hover-color;
+   }
+   @include media-breakpoint-up(lg) {
+      margin-right: $spacer;
+      padding: $spacer*.75;
+      padding: $spacer/4 0;
+
+      white-space: nowrap;
+      font-size: 14px;
+   }
+}
+.footerMain-topLinkIcon {
+   margin-left: $spacer/2;
+}
+.footerMain-collateral {
+   padding-right: $spacer;
+   padding-left: $spacer;
+
+   font-size: 16px;
+   p {
+      margin-bottom: 0;
+   }
+   @include media-breakpoint-up(sm) {
+      font-size: 24px;
+   }
+   @include media-breakpoint-up(lg) {
+      padding: 0;
+
+      font-size: 14px;
+   }
+}

@@ -1,0 +1,107 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to global notify message.
+// -----------------------------------------------------------------------------
+.showToggle {
+	color:palette(colorBrandBlue,base) !important;
+	color:red;
+}
+.notifyMain {
+	background:$notifyMain-background;
+	position:relative;
+	color:$notifyMain-color;
+	
+	transition: all .5s ease-in-out;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	overflow:hidden;
+	max-height: 500px;
+	//transform: scale(1);
+
+
+	&.is-closed {
+		//padding:0;
+		max-height: 0;
+		//opacity:0;
+		//transform: scale(1, 0);
+		//transform-origin: top center;
+
+	}
+}
+.notifyMain-inner {
+	max-width:$maxWidth;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	padding:$spacer/2 14px;
+}
+.notifyMain-copy {
+	@extend %noPhatBottom;
+	transition: max-height .25s ease-in-out;
+	line-height: 1.3
+}
+.notifyMain-heading {
+	color:$notifyMain-heading-color;
+	font-size:$notifyMain-heading-size;
+	margin-bottom:0;
+	text-transform:uppercase;
+}
+.notifyMain-content {
+	@extend %noPhatBottom;
+	flex: 1 1 auto;
+	
+	// .hidden-content {
+	// 	transition: all .5s ease-in-out;
+	// 	  // position: stati;
+	// 	  // width: 1px;
+	// 	  // height: 1px;
+	// 	  // padding: 0;
+	// 	  // overflow: hidden;
+	// 	  // clip: rect(0,0,0,0);
+	// 	  // white-space: nowrap;
+	// 	  // clip-path: inset(50%);
+	// 	  // border: 0;
+ //  		&.is-hidden {
+	// 	  position: absolute;
+	// 	  width: 1px;
+	// 	  height: 1px;
+	// 	  padding: 0;
+	// 	  overflow: hidden;
+	// 	  clip: rect(0,0,0,0);
+	// 	  white-space: nowrap;
+	// 	  clip-path: inset(50%);
+	// 	  border: 0;
+ //  		}
+	// }
+}
+// .notifyMain-copy span {
+// 	//display:none;
+// }
+.notifyMain-toggle {
+	display:inline-block;
+	color:$colorLinks;
+	cursor:pointer;
+	&:before {
+		content:'...';
+		display:inline-block;
+		margin-right:$spacer/2;
+		color:$colorText;
+	}
+	.is-expanded & {
+		display:none;
+	}
+}
+.notifyMain-toggleIcon {
+	margin-left:$spacer/4;
+	font-size:13px;
+	
+}
+.notifyMain-close {
+	@extend .fa-times;
+	color:$notifyMain-close-color;
+	font-size:$notifyMain-close-size;
+	margin-left:$spacer;
+	cursor:pointer;
+	&:before {
+		@extend %iconStyle;
+
+	}
+}

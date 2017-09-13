@@ -1,0 +1,128 @@
+.sideBySide {
+   &.sideBySide--fillGradiantBlue {
+      color: $colorWhite;
+      background: linear-gradient(25deg, #166299 0%, #166299 20%, #4bc1e1 44%, #4bc1e1 100%);
+   }
+}
+
+.sideBySide-inner {
+   display: flex;
+
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: stretch;
+
+   max-width: $maxWidth;
+   margin-right: auto;
+   margin-left: auto;
+   padding: $spacer 15px;
+
+   text-align: left;
+   @include media-breakpoint-up(lg) {
+      flex-direction: column;
+      justify-content: center;
+      align-content: space-between;
+
+      height: 310px;
+      padding-top: $spacer * 3;
+   }
+}
+
+.sideBySide-img {
+   flex: 0 0 50%;
+
+   max-width: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   max-height: 100%;
+   img {
+      display: inline-block;
+
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+   }
+   @include media-breakpoint-up(lg) {
+      flex: 0 1 100%;
+
+      max-width: none;
+      .sideBySide--imgRight & {
+         order: 1;
+
+         text-align: right;
+         justify-content: flex-end;
+      }
+   }
+}
+
+.sideBySide-copy {
+   display: flex;
+
+   flex: 0 0 calc(50% + 50px);
+   width: 100%;
+   flex-direction: column;
+   justify-content: center;
+
+   max-width: calc(50% + 50px);
+   @include media-breakpoint-up(sm) {
+      flex: 0 0 50%;
+
+      max-width: 50%;
+   }
+   @include media-breakpoint-up(lg) {
+      flex: 0 1 auto;
+
+      max-width: 550px;
+      margin-top: -$spacer * 2.5;
+   }
+}
+
+.sideBySide-heading {
+   @include responsive-font(5vw, 35px, 48px, 48px);
+}
+
+.sideBySide-subHeading {
+   @include responsive-font(5vw, 23px, 36px, 36px);
+}
+
+.sideBySide-cta {
+   flex: 0 0 100%;
+
+   max-width: 100%;
+   .btn {
+      display: block;
+      @include media-breakpoint-up(lg) {
+         display: inline-block;
+      }
+   }
+   @include media-breakpoint-up(lg) {
+      flex: 0 1 auto;
+
+      width: 550px;
+   }
+}
+
+
+.home .heroMain {
+   // .sideBySide:first-of-type {
+   //    height: 500px;
+   //    margin-top: -500px;
+   //    .sideBySide-inner {
+   //       height: 500px;
+   //    }
+   // }
+   @include media-breakpoint-up(lg) {
+      .sideBySide:first-of-type {
+         height: 400px;
+         margin-bottom: $spacer;
+         .sideBySide-inner {
+            align-items: flex-start;
+            height: 400px;
+            // .sideBySide-img{
+            //    margin-top: $spacer*4;
+            // }
+         }
+      }
+   }
+}

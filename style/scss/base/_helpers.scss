@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+.noScroll {
+  overflow: hidden;
+
+  height: 100%;
+}
+//loop through each color in the $palettes map in style/scss/_variables.scss and add the modifiers
+@each $palette in $palettes {
+    //Grab/Define the main colors e.g. "colorBrandBlue"
+    $baseColorName: nth($palette, 1);
+    //Grab/Define the modifiers, e.g. "lighter"
+    $modifiers: nth($palette, 2);
+//Generate helper classes
+@each $name, $value in $modifiers {
+    //Generate text color classes
+    .#{$baseColorName}#{capitalize($name)} {
+      color: $value !important;
+    }
+    //Generate text color classes
+    .fill#{capitalize($baseColorName)}#{capitalize($name)} {
+      background-color: $value !important;
+      &, a:not(.btn), a:not(.btn):hover {
+          color: color-contrast($value);
+      }
+    }
+  //when we find the name "base" we want to remove it from the helper classes
+  // i.e. good = ".colorBrandBlue", bad = ".colorBrandBlueBase"
+    @if $name == base {$name : '';}
+  }
+}
+.fillColorWhite {
+    background-color: $colorWhite !important;
+    &, a:not(.btn), a:not(.btn):hover {
+        color: color-contrast($colorWhite);
+    }
+}
+.fillColorBlack {
+    background-color: $colorBlack !important;
+    &, a:not(.btn), a:not(.btn):hover {
+        color: color-contrast($colorBlack);
+    }
+}
+.colorBrandOrange {
+  color: #f8bd43 !important;
+}
+.colorBrandBlue {
+  color: $colorBrandBlue !important;
+}
+.fontDefault {
+  font-family:$font-family-base;
+}
+.fontHeadings {
+  font-family:$font-family-base;
+}
+.inlined {
+  * {
+      display:inline;
+
+      margin-bottom:0;
+      padding:0;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      color:palette(colorGray,darker);
+    }
+    ol {
+      li {
+        counter-increment: step-counter;
+        &:before {
+            content: counter(step-counter) '.';
+            font-weight: bold;
+
+            color:palette(colorGray,darker);
+        }
+      }
+    }
+}

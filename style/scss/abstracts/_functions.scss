@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+$dark-text-default: $colorText !default;
+$light-text-default: $colorWhite !default;
+
+// Calculate brightness of a given color.
+@function brightness($color) {
+    @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 255 * 100%;
+}
+
+// Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+@function color-contrast($color, $dark: $dark-text-default, $light: $light-text-default) {
+    @if $color==null {
+        @return null;
+    }
+    @else {
+        $color-brightness: brightness($color);
+        $light-text-brightness: brightness($light);
+        $dark-text-brightness: brightness($dark);
+        @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+    }
+}
+//add a function so we can capitalize a value for camelcase
+@function capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+// Call the color palette modifiers
+
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($palettes, $palette), $shade);
+}

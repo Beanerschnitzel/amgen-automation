@@ -1,0 +1,120 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+//mixin for use in media queries or anyplace else extending doesnt make sense
+@mixin noPhatBottom {
+    & > *:last-child,
+    & > *:last-child > *:last-child,
+    & > *:last-child > *:last-child > *:last-child {
+      margin-bottom: 0 !important;
+    }
+}
+
+//for extending
+%noPhatBottom {
+    @include noPhatBottom;
+}
+
+//create an iconstyle mixin so you can just add fontawesome icons like so:
+// <p class="fa-asterisk">Now I have an icon without a clunky i element yo</p>
+
+@mixin iconStyle {
+  display: inline-block;
+  font: normal normal normal 14px/1 'FontAwesome';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right:.4em;
+}
+%iconStyle {
+    @include iconStyle;
+}
+[class^='fa-'],
+[class*=' fa-'] {
+    &:before {
+        @extend %iconStyle;
+
+        text-decoration: none;
+    }
+}
+//remove the margin when using the i element since there would most likely be a space used
+i[class^='fa-'],
+i[class*=' fa-'] {
+    &:before {
+        margin-right:0;
+    }
+}
+/* RESPONSIVE FONT
+========================================================================== */
+///
+/// Viewport sized typography with minimum and maximum values
+///
+/// @author Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+///
+/// @example scss - 5vw font size (with 50px fallback), 
+///                 minumum of 35px and maximum of 150px
+///  @include responsive-font(5vw, 35px, 150px, 50px);
+///
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+

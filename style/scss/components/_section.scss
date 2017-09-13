@@ -1,0 +1,29 @@
+.home .sectionContent section {
+   &:nth-of-type(odd) {
+      .sideBySide-copy,
+      .sideBySide-copy .sideBySide-heading:not(.colorBrandOrange)
+      .sideBySide-copy .sideBySide-subHeading:not(.colorBrandOrange) {
+         @extend .colorBrandBlue;
+      }
+      .btn {
+         @extend .btn-secondary;
+         font-size: 15px;
+         @include media-breakpoint-up(sm) {
+            font-size: 21px !important;
+         }
+      }
+      sup {
+         
+      }
+   }
+   &:nth-of-type(even) {
+      @extend .sideBySide--fillGradiantBlue;
+      .btn {
+         @extend .btn-primary;
+         font-size: 15px;
+         @include media-breakpoint-up(sm) {
+            font-size: 21px !important;
+         }
+      }
+   }
+}

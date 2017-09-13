@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins'; 
+
+// 2. Vendors
+// uncomment the below when the most recent version of bootstrap has been added
+// to the style/vendor directory
+@import
+  'vendor/font-awesome',
+  'vendor/bootstrap';
+  
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/main',
+  'layout/headerMain',
+  'layout/footerMain';
+
+// 5. Components
+@import
+  'components/sideBySide',
+  'components/notifyTray',
+  'components/notifyMain',
+  'components/button',
+  'components/references',
+  'components/section';
+
+// 6. Page-specific styles
+@import
+  'pages/access',
+  'pages/profiles',
+  'pages/styleguide';
+
+// 7. Themes
+@import
+  'themes/default';

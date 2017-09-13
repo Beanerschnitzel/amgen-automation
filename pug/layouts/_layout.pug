@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+	head
+		include ../includes/_head.pug
+		block head
+
+	body
+		| 
+		| <!-- Google Tag Manager (noscript) -->
+		noscript
+			iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-NDDTXW9" height="0" width="0" style="display:none;visibility:hidden")
+		| 
+		| <!-- End Google Tag Manager (noscript) -->
+		form
+			.pageWrap
+				include ../includes/_notifyMain.pug
+				include ../includes/_headerMain.pug
+				main
+
+					block content
+
+				include ../includes/_notifyTray.pug
+				include ../includes/_footerMain.pug

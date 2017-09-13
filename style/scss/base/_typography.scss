@@ -1,0 +1,75 @@
+/**
+ * Basic typography style for copy text
+ */
+
+
+sup {
+	// font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+	top: -.45em;
+	font-size: 70%;
+}
+
+h1 sup {
+	font-size: 50%;
+	vertical-align: 10px;
+}
+
+h2 sup {
+	font-size: 50%;
+	vertical-align: 10px;
+}
+
+h1,
+.h1 {
+	font-size: $font-size-h1 - 0.125rem;
+	@include media-breakpoint-up (md) {
+		font-size: $font-size-h1;
+	}
+}
+
+h2,
+.h2 {
+	font-size: $font-size-h2 - 0.125rem;
+	@include media-breakpoint-up (md) {
+		font-size: $font-size-h2;
+	}
+}
+
+h3,
+.h3 {
+	font-size: $font-size-h3 - 0.125rem;
+	@include media-breakpoint-up (md) {
+		font-size: $font-size-h3;
+	}
+}
+
+h4,
+.h4 {
+	font-size: $font-size-h4 - 0.125rem;
+	@include media-breakpoint-up (md) {
+		font-size: $font-size-h4;
+	}
+}
+
+h5,
+.h5 {
+	font-size: $font-size-h5 - 0.125rem;
+	@include media-breakpoint-up (md) {
+		font-size: $font-size-h5;
+	}
+}
+
+h6,
+.h6 {
+	font-size: $font-size-h6 - 0.125rem;
+	@include media-breakpoint-up (md) {
+		font-size: $font-size-h6;
+	}
+}
+
+@include media-breakpoint-down (md) {
+
+	.font30mobile{
+		font-size: 30px !important;
+	}
+}

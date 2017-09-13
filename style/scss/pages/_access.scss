@@ -1,0 +1,337 @@
+body.amgenassist360 {
+   margin: 0;
+   padding: 0;
+}
+
+.amgenassist360 .centerText {
+   text-align: center;
+}
+
+
+.amgenassist360 .tableRow {
+   display: table-row;
+}
+
+.amgenassist360 .flex {
+   display: flex;
+
+   flex-direction: column;
+   @media (min-width: 1000px) {
+      flex-direction: row;
+   }
+}
+
+.amgenassist360 .orange {
+   color: rgb(255, 118, 0) !important;
+}
+
+.amgenassist360 .darkGrey {
+   color: #404040 !important;
+}
+
+.aa360 a {
+   text-decoration: none;
+
+   color: inherit;
+}
+
+.aa360 sup {
+   font-size: 60%;
+   line-height: 0;
+}
+
+@media only screen and (min-width: 720px) {
+   .aa360 sup {
+      font-size: 60%;
+   }
+}
+
+// .amgenassist360 .wrapper {
+//    width: 90%;
+//    margin: 0 5%;
+// }
+
+@media only screen and (min-width: 1024px) {
+   .amgenassist360 .wrapper {
+      width: 960px;
+      margin: 0;
+   }
+}
+
+.aa360 p {
+   margin: 0 0 10px;
+}
+
+.amgenassist360 .third {
+   flex: 1 0 auto;
+   margin-bottom: 25px;
+   p {
+      margin-top: auto;
+   }
+   @media (min-width: 1000px) {
+      flex: 1 1 33.33%;
+      margin-bottom: 0;
+   }
+}
+
+.amgenassist360 .third.first {
+   @media (min-width: 1000px) {
+      padding: 0 18px 0 0;
+
+      border-right: 1px solid #c3e1f1;
+   }
+}
+.amgenassist360 .third.second {
+   @media (min-width: 1000px) {
+      padding: 0 18px;
+   }
+}
+
+.amgenassist360 .third.last {
+   @media (min-width: 1000px) {
+      padding: 0 0 0 18px;
+
+      border-left: 1px solid #c3e1f1;
+   }
+}
+
+.amgenassist360 .third.first h3 {
+   background: transparent url('../../img/content-images/access/icon-bubbles.png') left center no-repeat;
+   background-size: 73px 53px;
+}
+
+.amgenassist360 .third.second h3 {
+   background: transparent url('../../img/content-images/access/icon-globe-patient.png') left center no-repeat;
+   background-size: 61px 70px;
+}
+
+.amgenassist360 .third.last h3 {
+   background: transparent url('../../img/content-images/access/icon-paperwork.png') left center no-repeat;
+   background-size: 57px 68px;
+}
+
+.aa360,
+.aa360 .headline {
+   margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 720px) {
+   .aa360.threeColumn {
+      margin-top: 55px;
+   }
+}
+
+.aa360 h2,
+.aa360 h3 {
+   padding-left: 100px;
+
+   font-weight: normal;
+}
+
+.aa360 h2 {
+   min-height: 50px;
+   margin: 25px 0 10px 0;
+   padding-top: 25px;
+
+   font-size: 34px;
+
+   color: #0070b9;
+   background: transparent url('../../static/img/content-images/access/icon-nurse.png') top left no-repeat;
+   background-position: 10px 0;
+   background-size: 61px 74px;
+}
+
+@media only screen and (min-width: 720px) {
+   .aa360 h2 {
+      margin: 70px 0 20px 0;
+   }
+}
+
+.aa360 h3 {
+   min-height: 75px;
+   margin-top: 0;
+   margin-bottom: 10px;
+}
+
+.aa360 .benefit {
+   margin-bottom: 50px;
+   padding-left: 100px;
+
+   background-position: top left;
+}
+
+.aa360 .benefit.globe {
+   background: transparent url('../../static/img/content-images/access/icon-globe-patient.png') 16px 0 no-repeat;
+   background-size: 54px 62px;
+}
+
+.aa360 .benefit.lodging {
+   background: transparent url('../../static/img/content-images/access/icon-lodging.png') 7px 0 no-repeat;
+   background-size: 54px 62px;
+}
+
+.aa360 .benefit.heart {
+   background: transparent url('../../static/img/content-images/access/icon-heart-hands.png') 11px 0 no-repeat;
+   background-size: 63px 57px;
+}
+
+.aa360 .benefit h3 {
+   min-height: auto;
+   padding-left: 0;
+}
+
+.aa360 .third p,
+.aa360 .benefit p,
+.aa360 .headline p,
+.aa360 p {
+   font-size: 18px;
+   line-height: 28px;
+
+   color: #575757;
+}
+
+.aa360 .benefit p.footnote {
+   text-indent: -6px;
+   line-height: 22px;
+}
+
+.aa360 .contact-button-div {
+   float: right;
+
+   max-width: 380px;
+
+   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+   font-size: 15px;
+   line-height: 24px;
+}
+
+.aa360 .contact-button-div span {
+   letter-spacing: .055em;
+
+   color: #404040;
+}
+
+.aa360 .contact-button-div span.call {
+   font-size: 20px;
+   line-height: 1.333;
+}
+
+
+
+.aa360 .threeColumn {
+   display: table;
+
+   height: auto;
+   margin-right: auto;
+   margin-left: auto;
+   padding: 0;
+}
+
+
+.aa360 .contact-button-div span a {
+   color: #ff7600;
+}
+
+.aa360 .contact-button-div a {
+   text-align: center;
+   text-transform: uppercase;
+
+   color: #fff;
+}
+
+.aa360 .contact-button {
+   left: 724px;
+
+   width: 349px;
+   height: 38px;
+   margin-bottom: 16px;
+   padding-top: 8px;
+
+   letter-spacing: .04em;
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+   font-weight: bold;
+
+   border-radius: 6px;
+   background-color: #0081c6;
+}
+
+
+.amgenassist360 .footer-box {
+   min-height: 235px;
+   padding: 0;
+
+   background: transparent url('/static/VectibixHCP/img/content-images/access/footer-box.png') top center repeat-x;
+   background-size: 100%;
+}
+
+.amgenassist360 .footer-box .wrapper {
+   padding: 45px 0;
+}
+
+
+
+@media (max-width: 720px) {
+   .aa360 {
+      margin-bottom: 0;
+   }
+   .aa360 h2 {
+      padding-top: 0 !important;
+
+      font-size: 30px;
+
+      background-position: 10px 6px !important;
+   }
+   .aa360 .contact-button-div {
+      display: block;
+      float: none;
+
+      width: 100%;
+      max-width: none;
+
+      text-align: center;
+   }
+   .aa360 .contact-button-div span.call {
+      display: block;
+
+      white-space: nowrap;
+   }
+   .aa360 .contact-button {
+      width: 100%;
+      height: 38px;
+      margin: 50px 0 30px 0;
+   }
+   .amgenassist360 .third {
+      display: block !important;
+
+      width: 100%;
+      padding: 30px 0 !important;
+   }
+   .amgenassist360 .third.first {
+      border: none;
+      border-bottom: 1px solid #c3e1f1;
+   }
+   .amgenassist360 .third.last {
+      border: none;
+      border-top: 1px solid #c3e1f1;
+   }
+   .aa360 .benefit {
+      margin-bottom: 50px;
+      padding-left: 60px;
+
+      background-position: 0 5px !important;
+      background-size: 50px !important;
+   }
+   .aa360 .benefit-mobile {
+      margin-bottom: 50px;
+      padding-left: 0;
+   }
+   .amgenassist360 .footer-box .wrapper {
+      text-align: center;
+   }
+}
+
+
+.amgenassist360 .notifyTray {
+   padding-top: 0;
+}

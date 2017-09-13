@@ -1,0 +1,226 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to global notify message.
+// -----------------------------------------------------------------------------
+.notifyTray {
+   padding-top: $spacer*4;
+   padding-bottom: $spacer*4;
+
+   transition: height .3s ease-in-out;
+
+
+   a {
+      text-decoration: underline;
+
+      color: #0094ca;
+   }
+   //commented out so client can screenshot pages
+   &.is-sticky {
+      position: fixed;
+      z-index: 300;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      overflow: hidden;
+
+      height: 155px;
+      padding: 0;
+
+      line-height: 1.4;
+
+      border-top: 1px solid palette(colorBrandBlue,base);
+      background: $colorWhite;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ul,
+      ol,
+      li {
+         display: inline;
+      }
+      h2 {
+         font-size: 24px;
+      }
+      .notifyTray-inner {
+         overflow: hidden;
+
+         max-width: $maxWidth;
+         max-height: 100%;
+         margin-right: auto;
+         margin-left: auto;
+         padding: $spacer*.5 $spacer 0 $spacer;
+      }
+   }
+   &.full {
+      overflow: scroll;
+      
+      -webkit-overflow-scrolling: touch;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ul,
+      ol {
+         display: block;
+      }
+      li {
+         display: list-item;
+      }
+      .notifyTray-inner {
+         overflow: visible;
+
+         max-height: none;
+      }
+   }
+}
+
+.notifyTray-toggle {
+   display: none;
+   .is-sticky & {
+      display: block;
+
+      text-align: right;
+      text-transform: uppercase;
+   }
+}
+.notifyTray-toggleLink {
+   font-size: 14px;
+   &:hover {
+      color: $notifyTray-toggle-hover-color;
+   }
+   &:before {
+      @extend %iconStyle;
+   }
+   .is-sticky & {
+      @extend .fa-plus;
+      padding-left: $spacer;
+
+      cursor: pointer;
+
+      color: $notifyTray-toggle-color;
+   }
+   .full & {
+      @extend .fa-minus;
+   }
+}
+
+
+
+
+
+
+
+.paidISI {
+   position: relative;
+
+   display: none;
+
+   flex-direction: column;
+
+   box-sizing: border-box;
+   max-height: 300px;
+   padding: 0;
+
+   background: #fff;
+   &:after {
+      position: absolute;
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      height: 30px;
+
+      content: '';
+
+      background-image: linear-gradient(to top, #fff 0%, #fff 20%, rgba(255,255,255,0) 100%);
+   }
+   .paidISI-closeBar {
+      background: transparent;
+      height: 36px;
+      .paidISI-closeBar-inner {
+         @extend .container;
+         display: flex;
+
+         justify-content: space-between;
+
+         padding: 0 10px;
+
+         p,
+         span {
+            display: none;
+
+            margin: 0;
+            padding: 0;
+
+            font-size: 16px;
+
+            color: #fff;
+         }
+         span {
+            position: relative;
+
+            padding-right: 22px;
+
+            cursor: pointer;
+            &:after {
+               position: absolute;
+               top: 0;
+               right: 0;
+               bottom: 10px;
+
+               width: 10px;
+               height: 10px;
+               margin: auto 0;
+
+               content: '';
+               transform: rotate(45deg);
+
+               border-right: 3px solid $colorBrandOrange;
+               border-bottom: 3px solid $colorBrandOrange;
+            }
+         }
+         i {
+            @extend .notifyMain-close;
+            margin-left: auto !important;
+            background: #fff;
+         }
+      }
+      @media (min-width: 750px) {
+         background: $headerMain-util-background;
+         height: auto;
+         .paidISI-closeBar-inner {
+            padding: 10px;
+            p,
+            span {
+               display: block;
+            }
+            i {
+               display: none;
+            }
+            
+         }
+      }
+   }
+   .paidISI-inner {
+      @extend .container;
+      overflow-y: auto;
+      padding-top: 1rem;
+      box-sizing: border-box;
+      margin-top: -36px;
+      padding-right: 35px;
+      -webkit-overflow-scrolling: touch;
+      @media (min-width: 750px) {
+         padding-right: 0;
+         margin-top: 0;
+      }
+   }
+}
+
